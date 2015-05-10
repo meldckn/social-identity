@@ -1,7 +1,7 @@
 
 class Face {
 	
-	Spline Spline;
+	Spline spline;
 	int numVertices = 8;
 	int x, y; // center point
 	float radius;
@@ -32,7 +32,7 @@ class Face {
 		arr[7] = arr[9] = arr[11] = y + h2;
 		arr[5] = arr[13] = y;
 
-		Spline = new Spline (arr);
+		spline = new Spline (arr);
 	}
 
 }

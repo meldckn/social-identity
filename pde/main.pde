@@ -20,7 +20,11 @@ void setup() {
 	}
 
 	spline = new Spline (vertices);
+	
 	b1 = new Body ();
+	b1.setRadius (10);
+	b1.resetSpline ();
+
 	b2 = new Body ();
 }
 
