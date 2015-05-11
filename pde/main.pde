@@ -8,7 +8,7 @@ Body b1, b2;
 
 void setup() {
 	
-	jProcessingJS(this, {fullscreen:true, mouseoverlay:true});
+	jProcessingJS (this, {fullscreen:true, mouseoverlay:true});
 	smooth();
 	
 	// Populate vertices for body
