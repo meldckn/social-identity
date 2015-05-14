@@ -5,6 +5,7 @@ float radius = 15;
 
 Spline spline;
 Body b1, b2;
+Input input = new Input();
 
 void setup() {
 	
@@ -30,6 +31,13 @@ void setup() {
 
 void draw() {
 	background (210);
+
+	HashMap hm = new HashMap();
+
+	hm.put ("foo", "alpha");
+
+	//println (hm.get("foo"));
+
 	boolean debug = keyPressed;
 
 	pushMatrix ();
@@ -49,5 +57,16 @@ void draw() {
 	fill (0);
 	b2.display (debug);
 	popMatrix ();
+}
 
+// Called every time a key is pressed
+void keyPressed () {
+	// Set appropriate index to true
+	input.setKeyPressed ((int) key);
+}
+
+// Called every time a key is released
+void keyReleased () {
+	// Set appropriate index to false
+	input.setKeyReleased ((int) key);
 }
