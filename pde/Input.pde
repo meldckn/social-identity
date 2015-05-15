@@ -1,4 +1,10 @@
-// Singleton controller for keyboard (and mouse?) input
+/** 
+ * Singleton controller for keyboard (and mouse?) input.
+ *
+ * Controls hashmap of currently pressed keys.
+ * Functions get called from Processing's built-in key
+ * listener functions.
+*/
 public class Input {
 	
 	private static int KEY_W = 119;
@@ -9,24 +15,24 @@ public class Input {
 	private static int KEY_ENTER = ENTER;
 	private static int KEY_SHIFT = SHIFT;
 
-	public HashMap keysPressed = new HashMap();
+	private HashMap keysPressed = new HashMap();
 
-	public int keyCodes[] = { KEY_W, KEY_A, KEY_S, KEY_D };
+	private int keyCodes[] = { KEY_W, KEY_A, KEY_S, KEY_D };
 
 	public Input () {
 
 		for (int key=0; key<keyCodes.length; key++) {
 			keysPressed.put (keyCodes[key], false);
 		}
-		//println ("keysPressed : "+keysPressed);
-		//println ("keysPressed.get(KEY_W)"+keysPressed.get(KEY_W));
+
+	}
+
+	public HashMap getKeysPressed () {
+		return keysPressed;
 	}
 
 	// Called from Processing's keyPressed()
 	public void setKeyPressed (int key) {
-
-		//println ("in setKeyPressed("+key+"): "+keysPressed.get(key));
-
 		if ( keysPressed.containsKey (key) )
 			keysPressed.put (key, true);
 	}
@@ -35,6 +41,22 @@ public class Input {
 	public void setKeyReleased (int key) {
 		if ( keysPressed.containsKey (key) )
 			keysPressed.put (key, false);
+	}
+
+	// Return a string of <key,value> pairs
+	// indicating which keyboard key is currently pressed (true)
+	public String toString () {
+		String str = new String();
+
+		Iterator i = keysPressed.entrySet().iterator();
+
+		while (i.hasNext()) {
+			Map.Entry item = (Map.Entry)i.next();
+			str += "<" + item.getKey() + ",";
+			str += item.getValue() + "> ";
+		}
+
+		return str;
 	}
 
 }

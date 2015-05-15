@@ -32,13 +32,10 @@ void setup() {
 void draw() {
 	background (210);
 
-	HashMap hm = new HashMap();
-
-	hm.put ("foo", "alpha");
-
-	//println (hm.get("foo"));
-
 	boolean debug = keyPressed;
+
+	println ("pressed: "+
+		input.toString ());
 
 	pushMatrix ();
 	translate (width/2, height/2);
