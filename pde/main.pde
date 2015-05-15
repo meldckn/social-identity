@@ -34,8 +34,7 @@ void draw() {
 
 	boolean debug = keyPressed;
 
-	println ("pressed: "+
-		input.toString ());
+	println ("pressed: " + input);
 
 	pushMatrix ();
 	translate (width/2, height/2);
@@ -59,11 +58,11 @@ void draw() {
 // Called every time a key is pressed
 void keyPressed () {
 	// Set appropriate index to true
-	input.setKeyPressed ((int) key);
+	input.setKeyStatus ((int) key, true);
 }
 
 // Called every time a key is released
 void keyReleased () {
 	// Set appropriate index to false
-	input.setKeyReleased ((int) key);
+	input.setKeyStatus ((int) key, false);
 }

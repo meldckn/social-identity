@@ -7,17 +7,18 @@
 */
 public class Input {
 	
-	private static int KEY_W = 119;
-	private static int KEY_A = 97;
-	private static int KEY_S = 115;
-	private static int KEY_D = 100;
+	public static int KEY_UP = 119; // W
+	public static int KEY_LEFT = 97; // A
+	public static int KEY_DOWN = 115; // S
+	public static int KEY_RIGHT = 100; // D
 
-	private static int KEY_ENTER = ENTER;
-	private static int KEY_SHIFT = SHIFT;
+	public static int KEY_ENTER = ENTER;
+	public static int KEY_SHIFT = SHIFT;
 
 	private HashMap keysPressed = new HashMap();
 
-	private int keyCodes[] = { KEY_W, KEY_A, KEY_S, KEY_D };
+	private int keyCodes[] = 
+		{ KEY_UP, KEY_LEFT, KEY_DOWN, KEY_RIGHT };
 
 	public Input () {
 
@@ -31,20 +32,14 @@ public class Input {
 		return keysPressed;
 	}
 
-	// Called from Processing's keyPressed()
-	public void setKeyPressed (int key) {
+	// Called from Processing's keyPressed()/Released()
+	public void setKeyStatus (int key, boolean status) {
 		if ( keysPressed.containsKey (key) )
-			keysPressed.put (key, true);
+			keysPressed.put (key, status);
 	}
 
-	// Called from Processing's keyReleased()
-	public void setKeyReleased (int key) {
-		if ( keysPressed.containsKey (key) )
-			keysPressed.put (key, false);
-	}
-
-	// Return a string of <key,value> pairs
-	// indicating which keyboard key is currently pressed (true)
+	// Return a string of <key,value> pairs, where the value is
+	// true/false, the keyboard key is/not currently pressed
 	public String toString () {
 		String str = new String();
 
