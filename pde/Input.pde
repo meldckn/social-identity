@@ -15,10 +15,10 @@ public class Input {
 	public static int KEY_ENTER = ENTER;
 	public static int KEY_SHIFT = SHIFT;
 
-	private HashMap keysPressed = new HashMap();
-
 	private int keyCodes[] = 
 		{ KEY_UP, KEY_LEFT, KEY_DOWN, KEY_RIGHT };
+
+	private HashMap keysPressed = new HashMap();
 
 	public Input () {
 
@@ -28,8 +28,16 @@ public class Input {
 
 	}
 
-	public HashMap getKeysPressed () {
-		return keysPressed;
+	// Returns 1's in positions of current keys pressed
+	// (e.g., "1100" for UP and LEFT pressed, DOWN and RIGHT not)
+	public byte getMovement () {
+
+		byte movement = keysPressed.get (KEY_UP) << 3 |
+						keysPressed.get (KEY_LEFT) << 2 |
+						keysPressed.get (KEY_DOWN) << 1 |
+						keysPressed.get (KEY_RIGHT);
+
+		return movement;
 	}
 
 	// Called from Processing's keyPressed()/Released()
