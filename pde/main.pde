@@ -37,8 +37,12 @@ void draw() {
 	println ("pressed: " + input);
 
 	// Forward movement bitstream (4 bits)
-	// to fcn: player.keyMovement (input.getMovement()) 
+	// player.setKeyMovement (input.getMovement());
+	 
 	println ("movement: " + binary( input.getMovement(), 4 ));
+
+	// player.display(); // includes movement
+	// community.display(); 
 
 	pushMatrix ();
 	translate (width/2, height/2);
