@@ -1,4 +1,12 @@
-
+/**
+ * Main body shape for a single character in the community.
+ * 
+ * Circular, closed spline, with slight randomness in radii
+ * at different angles around the circumference.
+ * 
+ * Only controls points that make up the shape, not the 
+ * position of the shape on the canvas.
+ */
 public class Body {
 
 	private Spline spline;
@@ -18,6 +26,8 @@ public class Body {
 		resetSpline ();
 	}
 
+	// Whenever caller sets a new radius,
+	// should probably also resetSpline() to see effect
 	public void setRadius (float r) { radius = r; }
 	public void setColor  (color c) { bodyColor = c; }
 	public void setOpacity (float o) { opacity = o; }

@@ -6,6 +6,7 @@ float radius = 15;
 Spline spline;
 Body b1, b2;
 Input input = new Input();
+Character c1, c2, c3;
 
 void setup() {
 	
@@ -27,6 +28,10 @@ void setup() {
 	b1.resetSpline ();
 
 	b2 = new Body ();
+
+	c1 = new Character ();
+	c2 = new Character ();
+	c3 = new Character ();
 }
 
 void draw() {
@@ -38,28 +43,19 @@ void draw() {
 
 	// Forward movement bitstream (4 bits)
 	// player.setKeyMovement (input.getMovement());
-	 
+
 	println ("movement: " + binary( input.getMovement(), 4 ));
 
 	// player.display(); // includes movement
 	// community.display(); 
 
-	pushMatrix ();
-	translate (width/2, height/2);
-	fill (0);
-	spline.display (debug);
-	popMatrix ();
-
-	pushMatrix ();
-	translate (width/3,height/4);
-	fill(0);
-	b1.display (debug);
-	popMatrix ();
+	c1.display (width/2, height/2);
+	c2.setPosition (width/3, height/4);
+	c2.display ();
 
 	pushMatrix ();
 	translate (350, 300);
-	fill (0);
-	b2.display (debug);
+	//b2.display (debug);
 	popMatrix ();
 }
 
