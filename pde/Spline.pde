@@ -10,9 +10,9 @@ public class Spline {
 		this.vertices = new float[numVertices*2];
 	}
 
-	//public Spline (float[] v) {
-	//	this.vertices = v;
-	//}
+	public Spline (float[] v, boolean fromArray) {
+		this.vertices = v;
+	}
 
 	public void setVertex (int vertexNumber, float x, float y) {
 		vertices[vertexNumber*2]   = x;

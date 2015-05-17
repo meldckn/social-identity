@@ -11,6 +11,7 @@ public class Character {
 
 	public Character () {
 		this.body = new Body ();
+		this.face = new Face (5);
 	}
 
 	public void setPosition (float x, float y) {
@@ -31,7 +32,8 @@ public class Character {
 		pushMatrix ();
 		translate (x, y);
 		body.display (false);
-		//face.display ();
+		fill (255);
+		face.display (x, y);
 		popMatrix ();
 	}
 

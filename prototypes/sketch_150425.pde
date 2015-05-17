@@ -1,7 +1,7 @@
 
 int numVertices = (int) random (8, 12);
 float[] vertices = new float [numVertices*2];
-float radius = 50;
+float radius = 30;
 
 float[] faceVertices = new float [8*2];
 
@@ -21,10 +21,10 @@ void setup() {
 }
 
 void draw() {
-  background (204);
+  background (195,207,82);
 
   drawBody (width/2, height/2);
-  //drawFace (width/2, height/2 - (int) radius +2);
+  drawFace (width/2, height/2 - (int) radius +2);
 }
 
 float[] populateFace (int x, int y) {

@@ -1,9 +1,10 @@
 
-class Face {
+public class Face {
 	
 	Spline spline;
 	int numVertices = 8;
-	int x, y; // center point
+	float x = 0;
+	float y = 0; // center point
 	float radius;
 	float eyeRadius; 
 
@@ -32,7 +33,14 @@ class Face {
 		arr[7] = arr[9] = arr[11] = y + h2;
 		arr[5] = arr[13] = y;
 
-		spline = new Spline (arr);
+		spline = new Spline (arr, true);
+	}
+
+	public void display (float x, float y) {
+		pushMatrix ();
+		translate (x, y);
+		spline.display ();
+		popMatrix ();
 	}
 
 }
