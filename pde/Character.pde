@@ -18,6 +18,11 @@ public class Character {
 		this.y = y;
 	}
 
+	public void setRadius (int radius) {
+		this.body.setRadius (radius);
+		this.body.resetSpline ();
+	}
+
 	public void display () {
 		display (this.x, this.y);
 	}

@@ -8,7 +8,6 @@ public class Spline {
 
 	public Spline (int numVertices) {
 		this.vertices = new float[numVertices*2];
-		println("init Spline "+numVertices);
 	}
 
 	//public Spline (float[] v) {

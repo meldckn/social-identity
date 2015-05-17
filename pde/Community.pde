@@ -13,6 +13,23 @@ public class Community {
 		this.populationSize = populationSize;
 
 		// Randomize initial character parameters
+		for (int c=0; c<populationSize; c++) {
+			Character character = new Character ();
+			character.setPosition (random (30, width-30), 
+								   random (30, height-30));
+			character.setRadius (random (10,15));
+			characters.put (c, character);
+
+		}
+	}
+
+	public void display () {
+		Iterator i = characters.entrySet().iterator();
+
+		while (i.hasNext()) {
+			Map.Entry characterKey = (Map.Entry)i.next();
+			characterKey.getValue().display();
+		}
 
 	}
 

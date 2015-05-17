@@ -10,19 +10,18 @@
 public class Body {
 
 	private Spline spline;
+	private int numVertices = 8;
 	private float radius = 15;
 	private color bodyColor = color(0); 
 	private float opacity;
 
 	public Body () {
-		this (8); 
+		this (numVertices); 
 	}
 
 	public Body (int numVertices) {
-
+		this.numVertices = numVertices;
 		this.spline = new Spline (numVertices);
-		println("initializing Body "+numVertices);
-
 		resetSpline ();
 	}
 
@@ -38,7 +37,8 @@ public class Body {
 
 		// Populate vertices of Spline shape
   		for (int i=0; i<numVertices; i++) {
-    		float theta = radians ( (float)i * 360/numVertices) ;//+ random (10, 20);
+    		float theta = radians ( (float)i * 360/numVertices) ;
+    			//+ random (10, 20);
     		float radiusScalar = radius * random (.9, 1.1);
     		spline.setVertex (i, cos (theta) * radiusScalar,  // x
     							 sin (theta) * radiusScalar); // y
