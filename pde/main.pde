@@ -11,7 +11,7 @@ void setup() {
 }
 
 void draw() {
-	background (210);
+	background (195,207,82);
 
 	// Forward movement bitstream (4 bits)
 	// player.setKeyMovement (input.getMovement());

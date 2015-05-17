@@ -6,12 +6,14 @@
 public class Character {
 	Body body;
 	Face face;
+	int faceMode;
 	float x = 0;
 	float y = 0; 
 
 	public Character () {
 		this.body = new Body ();
-		this.face = new Face (5);
+		this.face = new Face ();
+		this.faceMode = (int) random (0,2);
 	}
 
 	public void setPosition (float x, float y) {
@@ -22,6 +24,7 @@ public class Character {
 	public void setRadius (int radius) {
 		this.body.setRadius (radius);
 		this.body.resetSpline ();
+		this.face.setRadius (radius);
 	}
 
 	public void display () {
@@ -32,8 +35,7 @@ public class Character {
 		pushMatrix ();
 		translate (x, y);
 		body.display (false);
-		fill (255);
-		face.display (x, y);
+		face.display (faceMode); 
 		popMatrix ();
 	}
 

@@ -11,15 +11,17 @@ public class Community {
 
 	public Community (int populationSize) {
 		this.populationSize = populationSize;
+		int padding = 100;
+
+		println ("width and height in Community: "+width+","+height);
 
 		// Randomize initial character parameters
 		for (int c=0; c<populationSize; c++) {
 			Character character = new Character ();
-			character.setPosition (random (30, width-30), 
-								   random (30, height-30));
+			character.setPosition (random (padding, width-padding), 
+								   random (padding, height-padding));
 			character.setRadius (random (10,15));
 			characters.put (c, character);
-
 		}
 	}
 
