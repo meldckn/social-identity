@@ -11,7 +11,7 @@ public class Community {
 
 	public Community (int populationSize) {
 		this.populationSize = populationSize;
-		int padding = 100;
+		int padding = 200;
 
 		println ("width and height in Community: "+width+","+height);
 
@@ -27,6 +27,9 @@ public class Community {
 
 	public void display () {
 		Iterator i = characters.entrySet().iterator();
+
+		// Sort characters by increasing y-position
+		// Bottom of a character = y+radius
 
 		while (i.hasNext()) {
 			Map.Entry characterKey = (Map.Entry)i.next();

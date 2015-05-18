@@ -7,7 +7,7 @@ void setup() {
 	jProcessingJS (this, {fullscreen:true, mouseoverlay:true});
 	smooth();
 
-	community = new Community (50);
+	community = new Community (30);
 }
 
 void draw() {
