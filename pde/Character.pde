@@ -13,7 +13,7 @@ public class Character {
 	public Character () {
 		this.body = new Body ();
 		this.face = new Face ();
-		this.faceMode = (int) random (0,2);
+		this.faceMode = (int) random (0,3);
 	}
 
 	public void setPosition (float x, float y) {

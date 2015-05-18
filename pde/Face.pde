@@ -3,6 +3,7 @@ public class Face {
 	
 	float eyeRadius = 5; // spacing between eyes
 	float eyeHeight = 5; // height above center of body
+	float eyeWidth = 2;
 
 	public Face () {
 
@@ -15,8 +16,7 @@ public class Face {
 		this.eyeRadius = bodyRadius * random (.5, .7);
 	}
 
-	public void simpleEyes () {
-		float eyeWidth = 2;
+	private void simpleEyes () {
 
 		fill (255);
 		// stage left
@@ -27,7 +27,7 @@ public class Face {
 
 	// Eyes with white part
 	private void eyesWithSclera () {
-		float smWidth = 2;
+		float smWidth = eyeWidth;
 		float lgWidth = smWidth*1.8;
 
 		fill (255);
@@ -41,11 +41,31 @@ public class Face {
 		ellipse (eyeRadius, -eyeHeight, smWidth, smWidth);
 	}
 
+	private void crosshairs () {
+		
+		eyeWidth = 1;
+		strokeWeight (.5);
+		stroke (255);
+
+		// left
+		line (-eyeRadius-eyeWidth, -eyeHeight, 
+			  -eyeRadius+eyeWidth, -eyeHeight);
+		line (-eyeRadius, -eyeHeight-eyeWidth,
+			  -eyeRadius, -eyeHeight+eyeWidth);
+
+		// right
+		line (eyeRadius-eyeWidth, -eyeHeight,
+			  eyeRadius+eyeWidth, -eyeHeight);
+		line (eyeRadius, -eyeHeight-eyeWidth,
+			  eyeRadius, -eyeHeight+eyeWidth);
+	}
+
 	// Caller (Body class) should have already translated 
 	// the origin to the center of the body spline
 	public void display (int mode) {
 		if (mode == 0) simpleEyes ();
 		else if (mode == 1) eyesWithSclera ();
+		else if (mode == 2) crosshairs ();
 	}
 
 }
