@@ -25,6 +25,8 @@ public class Body {
 		resetSpline ();
 	}
 
+	public float getRadius () { return this.radius; }
+
 	// Whenever caller sets a new radius,
 	// should probably also resetSpline() to see effect
 	public void setRadius (float r) { radius = r; }

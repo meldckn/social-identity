@@ -16,6 +16,11 @@ public class Character {
 		this.faceMode = (int) random (0,3);
 	}
 
+	// The y-position of the "feet" of the character
+	public float getStandingDepth () {
+		return this.y + body.getRadius();
+	}
+
 	public void setPosition (float x, float y) {
 		this.x = x;
 		this.y = y;

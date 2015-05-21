@@ -20,13 +20,16 @@ public class Community {
 			Character character = new Character ();
 			character.setPosition (random (padding, width-padding), 
 								   random (padding, height-padding));
-			character.setRadius (random (10,15));
+			character.setRadius (random (7,15));
 			characters.put (c, character);
 		}
 	}
 
 	public void display () {
 		Iterator i = characters.entrySet().iterator();
+
+		// First draw shadows, outlines, etc,
+		// so they appear below characters
 
 		// Sort characters by increasing y-position
 		// Bottom of a character = y+radius
