@@ -26,19 +26,46 @@ public class Community {
 	}
 
 	public void display () {
-		Iterator i = characters.entrySet().iterator();
 
 		// First draw shadows, outlines, etc,
 		// so they appear below characters
 
 		// Sort characters by increasing y-position
-		// Bottom of a character = y+radius
+		
+		// TODO: only re-sort keys when movement happens?
+		// (probably not every frame)
 
-		while (i.hasNext()) {
-			Map.Entry characterKey = (Map.Entry)i.next();
-			characterKey.getValue().display();
+		int[] sortedIndices = sortByDepth (characters);
+		
+		// Draw each character in characters HashMap
+		for (int key=0; key<sortedIndices.length; key++) {
+			characters.getValue(key).display();
 		}
 
+	}
+
+	/** 
+	 * Return array of Hashmap keys sorted by 
+	 * increasing y-position (using Character
+	 * y and radius properties)
+	 * TODO: add sorting function parameter 
+	 */
+	public int[] sortByDepth (HashMap map) {
+
+		int[] sortedIndices = new int[map.size()];
+
+		Iterator i = map.entrySet().iterator();
+		
+		while (i.hasNext()) {
+			// For each element: 
+
+			Map.Entry key = (Map.Entry)i.next();
+			
+			// insertion sort(?) of each key by
+			// key.getValue().getStandingDepth();
+		}
+
+		return sortedIndices;
 	}
 
 }
