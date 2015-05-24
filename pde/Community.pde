@@ -40,11 +40,10 @@ public class Community {
 		// TODO: only re-sort keys when movement happens?
 		// (probably not every frame)
 
-		int[] sortedIndices = sortByDepth (characters, 
-										   charsSortedByDepth);
+		sortByDepth (characters, charsSortedByDepth);
 		
 		// Draw each character in characters HashMap
-		for (int i=0; i<sortedIndices.length; i++) {
+		for (int i=0; i<charsSortedByDepth.length; i++) {
 			int key = charsSortedByDepth [i];
 			characters.get(key).display();
 		}
