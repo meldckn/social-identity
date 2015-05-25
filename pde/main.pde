@@ -16,7 +16,7 @@ void draw() {
 	// Forward movement bitstream (4 bits)
 	// player.setKeyMovement (input.getMovement());
 
-	println ("movement: " + binary( input.getMovement(), 4 ));
+	//println ("movement: " + binary( input.getMovement(), 4 ));
 
 	// player.display(); // includes movement
 	community.display(); 

@@ -7,6 +7,14 @@ public class Player {
 		this.character = new Character ();
 	}
 
+	public Player (Character character) {
+		this.character = character;
+	}
+
+	public Character getCharacter () {
+		return this.character;
+	}
+
 	// Takes a 4-bitstream of WASD keys currently pressed
 	public void setKeyMovement (byte movement) {
 

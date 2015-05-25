@@ -6,9 +6,10 @@
  */
 public class Community {
 
-	private int populationSize = 10;
+	private int populationSize = 10; // includes player character
 	private HashMap characters = new HashMap ();
 	private int[] charsSortedByDepth;
+	private Player playerCharacter;
 
 	public Community (int populationSize) {
 
@@ -28,6 +29,9 @@ public class Community {
 			characters.put (c, character);
 			charsSortedByDepth[c] = c;
 		}
+
+
+		this.playerCharacter = new Player (characters.get (0));
 	}
 
 	public void display () {
