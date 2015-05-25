@@ -34,6 +34,10 @@ public class Community {
 		this.playerCharacter = new Player (characters.get (0));
 	}
 
+	public Player getPlayerCharacter () {
+		return this.playerCharacter;
+	}
+
 	public void display () {
 
 		// First draw shadows, outlines, etc,

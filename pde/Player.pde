@@ -18,6 +18,8 @@ public class Player {
 	// Takes a 4-bitstream of WASD keys currently pressed
 	public void setKeyMovement (byte movement) {
 
+		println ("movement: " + binary( movement, 4 ));
+
 		// Pressing 2 keys creates diagonal movement
 		// unless they are on the same axis (e.g., W and S)
 		

@@ -18,8 +18,8 @@ void draw() {
 
 	//println ("movement: " + binary( input.getMovement(), 4 ));
 
-	// player.display(); // includes movement
-	community.display(); 
+	community.getPlayerCharacter().setKeyMovement(input.getMovement());
+	community.display (); 
 
 }
 
