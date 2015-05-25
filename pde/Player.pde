@@ -2,6 +2,7 @@
 public class Player {
 	
 	private Character character;
+	private float speed = 3;
 
 	public Player () {
 		this.character = new Character ();
@@ -22,8 +23,10 @@ public class Player {
 
 		// Pressing 2 keys creates diagonal movement
 		// unless they are on the same axis (e.g., W and S)
+		byte horiz = (movement & 1) - ((movement & 4)>>2); 
+		byte vert  = ((movement & 2)>>1) - ((movement & 8)>>3);
 		
-		//character.setPosition (x+..,y+..);
+		character.setPositionRelative (speed*horiz, speed*vert);
 	}
 
 }

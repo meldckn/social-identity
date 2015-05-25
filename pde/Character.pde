@@ -26,6 +26,11 @@ public class Character {
 		this.y = y;
 	}
 
+	public void setPositionRelative (float x, float y) {
+		this.x += x;
+		this.y += y;
+	}
+
 	public void setRadius (int radius) {
 		this.body.setRadius (radius);
 		this.body.resetSpline ();
