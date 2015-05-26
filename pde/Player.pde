@@ -16,13 +16,11 @@ public class Player {
 		return this.character;
 	}
 
-	// Takes a 4-bitstream of WASD keys currently pressed
+	/**
+	 * Takes a 4-bitstring of currently pressed WASD keys 
+	 */
 	public void setKeyMovement (byte movement) {
 
-		println ("movement: " + binary( movement, 4 ));
-
-		// Pressing 2 keys creates diagonal movement
-		// unless they are on the same axis (e.g., W and S)
 		byte horiz = (movement & 1) - ((movement & 4)>>2); 
 		byte vert  = ((movement & 2)>>1) - ((movement & 8)>>3);
 		
