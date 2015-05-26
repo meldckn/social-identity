@@ -16,9 +16,7 @@ public class Community {
 		this.populationSize = populationSize;
 		this.charsSortedByDepth = new int[populationSize];
 
-		int padding = 200;
-
-		println ("width and height in Community: "+width+","+height);
+		int padding = 100;
 
 		// Randomize initial character parameters
 		for (int c=0; c<populationSize; c++) {
