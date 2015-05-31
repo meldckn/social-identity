@@ -9,13 +9,7 @@ public class Landscape {
 	private float padding; // padding around main rect.
 	private color background_color;
 
-	static private color OLIVINE = color (151, 191, 125);
-	static private color OLIVINE_LIGHT = color (167, 207, 141);
-	static private color CELADON = color (172, 225, 175);
-	static private color SPROUT_WARM = color (168, 207, 157);
-	static private color GREEN_YELLOW = color (195, 255, 82);
-
-	private color grassColor = GREEN_YELLOW;
+	private color grassColor = Colors.GREEN_YELLOW;
 	private int numGrassPatches = 1;
 	private float[][][] grassPatches = new float[numGrassPatches][][];
 	private float[] grassXOrigins = new float[numGrassPatches];
@@ -26,7 +20,7 @@ public class Landscape {
 		this.height = height;
 		this.padding = 40;
 
-		this.background_color = OLIVINE;
+		this.background_color = Colors.OLIVINE;
 
 		// Initialize each grass patch
 		for (int patch=0; patch<numGrassPatches; patch++) {
